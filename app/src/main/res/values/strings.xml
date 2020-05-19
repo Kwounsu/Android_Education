@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ActivitiyDemo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_show_fragment">Add/Show Fragment</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="enter_username">enter username</string>
+    <string name="enter_lastname">enter lastname</string>
+    <string name="show_details">Show Details</string>
+</resources>

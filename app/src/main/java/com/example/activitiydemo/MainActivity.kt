@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity(), SecondFragment.GetUserDetail {
 
     lateinit var firstname : String
     lateinit var lastname : String
+    lateinit var firstFragment : FirstFragment
     val firstnamekey = "firstnamekey"
     val lastnamekey = "lastnamekey"
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(), SecondFragment.GetUserDetail {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d(TAG, "==>onCreate()");
+        firstFragment = first_fragment as FirstFragment
         loadFragment()
     }
 
@@ -34,10 +36,9 @@ class MainActivity : AppCompatActivity(), SecondFragment.GetUserDetail {
 
     // Activity -> First Fragment
     override fun showDetails(firstName: String, lastName: String) {
-        val firstFragment : FirstFragment = first_fragment as FirstFragment;
         firstFragment.showDetails(firstName,lastName)
-        this.firstname = firstName
-        this.lastname = lastName
+        firstname = firstName
+        lastname = lastName
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -49,11 +50,11 @@ class MainActivity : AppCompatActivity(), SecondFragment.GetUserDetail {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        this.firstname = savedInstanceState.getString(firstnamekey).toString()
-        this.lastname = savedInstanceState.getString(lastnamekey).toString()
+        firstname = savedInstanceState.getString(firstnamekey).toString()
+        lastname = savedInstanceState.getString(lastnamekey).toString()
         Log.d(TAG, "==>onRestoreInstanceState()");
         Log.d(TAG, "==>savedInstanceState:$firstname $lastname");
-        showDetails(firstname,lastname)
+        firstFragment.showDetails(firstname,lastname)
     }
 
     override fun onStart() {

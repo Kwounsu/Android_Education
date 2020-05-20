@@ -15,12 +15,12 @@ class FirstFragment : Fragment(){
     lateinit var firstnameTxt : TextView
     lateinit var lastnameTxt : TextView
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Log.d(TAG, "===>Fragment onCreateView()");
+        Log.d(TAG, "==Fragment=> onCreateView()");
+        // Choose the layout to inflate
         val view =  inflater.inflate(R.layout.fragment_first, container, false)
         firstnameTxt = view.findViewById<TextView>(R.id.firstName_txt)
         lastnameTxt = view.findViewById<TextView>(R.id.lastName_txt)
@@ -34,51 +34,51 @@ class FirstFragment : Fragment(){
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        Log.d(TAG, "===>Fragment onAttach()");
+        Log.d(TAG, "==Fragment=> onAttach()");
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "===>Fragment onCreate()");
+        Log.d(TAG, "==Fragment=> onCreate()");
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        Log.d(TAG, "===>Fragment onActivityCreated()");
+        Log.d(TAG, "==Fragment=> onActivityCreated()");
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d(TAG, "===>Fragment onStart()");
+        Log.d(TAG, "==Fragment=> onStart()");
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "===>Fragment onResume()");
+        Log.d(TAG, "==Fragment=> onResume()");
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d(TAG, "===>Fragment onPause()");
+        Log.d(TAG, "==Fragment=> onPause()");
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "===>Fragment onStop()");
+        Log.d(TAG, "==Fragment=> onStop()");
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.d(TAG, "===>Fragment onDestroyView()");
+        Log.d(TAG, "==Fragment=> onDestroyView()");
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "===>Fragment onDestroy()");
+        Log.d(TAG, "==Fragment=> onDestroy()");
     }
 
     override fun onDetach() {
         super.onDetach()
-        Log.d(TAG, "===>Fragment onDetach()");
+        Log.d(TAG, "==Fragment=> onDetach()");
     }
 }

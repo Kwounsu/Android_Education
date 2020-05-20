@@ -13,6 +13,7 @@ class SecondFragment : Fragment() {
     interface GetUserDetail {
         fun showDetails(firstName:String, lastName:String)
     }
+
     lateinit var getUserDetail : GetUserDetail
     lateinit var firstNameEditText : EditText
     lateinit var lastNameEditText : EditText
@@ -25,11 +26,10 @@ class SecondFragment : Fragment() {
         val showDetailButton = view.findViewById<Button>(R.id.showDetails_btn)
         firstNameEditText = view.findViewById(R.id.firstname_edt)
         lastNameEditText = view.findViewById(R.id.lastname_edt)
-
         showDetailButton.setOnClickListener( View.OnClickListener {
+            // Second Fragment -> Activity
             getUserDetail.showDetails(firstNameEditText.text.toString(),lastNameEditText.text.toString())
         })
-
         return view
     }
 

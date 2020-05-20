@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:layout_gravity="center"
-tools:context=".SecondFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:padding="@dimen/medium_size"
+    tools:context=".SecondFragment">
 
     <EditText
         android:id="@+id/firstname_edt"
@@ -14,7 +15,6 @@ tools:context=".SecondFragment">
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/enter_username"
-        android:textColorHint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,6 @@ tools:context=".SecondFragment">
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/enter_lastname"
-        android:textColorHint="@color/colorAccent"
         app:layout_constraintTop_toBottomOf="@+id/firstname_edt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +37,8 @@ tools:context=".SecondFragment">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/show_details"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         app:layout_constraintTop_toBottomOf="@+id/lastname_edt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,36 +12,47 @@
         android:id="@+id/firstname_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/lastname_edt"/>
+        android:hint="@string/enter_firstname"/>
 
     <EditText
         android:id="@+id/lastname_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/firstname_edt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/showDetails_btn"/>
+        android:hint="@string/enter_lastname"
+        android:layout_below="@+id/firstname_edt"
+        android:layout_marginTop="@dimen/small_size"/>
+
+    <EditText
+        android:id="@+id/gender_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/enter_gender"
+        android:layout_below="@+id/lastname_edt"
+        android:layout_marginTop="@dimen/small_size"/>
+
+    <EditText
+        android:id="@+id/address_edt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/enter_address"
+        android:layout_below="@+id/gender_edt"
+        android:layout_marginTop="@dimen/small_size"/>
 
     <Button
-        android:id="@+id/showDetails_btn"
+        android:id="@+id/submit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/small_size"
-        android:text="@string/show_details"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
         android:background="@color/colorPrimary"
-        app:layout_constraintTop_toBottomOf="@+id/lastname_edt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:padding="@dimen/small_size"
+        android:text="@string/submit"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:layout_below="@+id/address_edt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/small_size"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -14,6 +14,8 @@ class FirstFragment : Fragment(){
 
     lateinit var firstnameTxt : TextView
     lateinit var lastnameTxt : TextView
+    lateinit var genderTxt : TextView
+    lateinit var addressTxt : TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,12 +26,16 @@ class FirstFragment : Fragment(){
         val view =  inflater.inflate(R.layout.fragment_first, container, false)
         firstnameTxt = view.findViewById<TextView>(R.id.firstName_txt)
         lastnameTxt = view.findViewById<TextView>(R.id.lastName_txt)
+        genderTxt = view.findViewById<TextView>(R.id.gender_txt)
+        addressTxt = view.findViewById<TextView>(R.id.address_txt)
         return view
     }
 
-    fun showDetails(firstname : String, lastname : String){
+    fun showDetails(firstname : String, lastname : String, gender : String, address : String){
         firstnameTxt.setText(firstname)
         lastnameTxt.setText(lastname)
+        genderTxt.setText(gender)
+        addressTxt.setText(address)
     }
 
     override fun onAttach(context: Context) {

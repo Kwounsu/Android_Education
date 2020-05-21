@@ -12,9 +12,13 @@ class MainActivity : AppCompatActivity(), SecondFragment.GetUserDetail {
 
     lateinit var firstname : String
     lateinit var lastname : String
+    lateinit var gender : String
+    lateinit var address : String
     lateinit var firstFragment : FirstFragment
     val firstnamekey = "firstnamekey"
     val lastnamekey = "lastnamekey"
+    val genderkey = "genderkey"
+    val addresskey = "addresskey"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,16 +39,20 @@ class MainActivity : AppCompatActivity(), SecondFragment.GetUserDetail {
     }
 
     // Activity -> First Fragment
-    override fun showDetails(firstName: String, lastName: String) {
-        firstFragment.showDetails(firstName,lastName)
-        firstname = firstName
-        lastname = lastName
+    override fun showDetails(firstName: String, lastName: String, gender : String, address : String) {
+        firstFragment.showDetails(firstName,lastName,gender,address)
+        this.firstname = firstName
+        this.lastname = lastName
+        this.gender = gender
+        this.address = address
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString(firstnamekey, firstname)
         outState.putString(lastnamekey, lastname)
+        outState.putString(genderkey, gender)
+        outState.putString(addresskey, address)
         Log.d(TAG, "==>onSaveInstanceState()");
     }
 
@@ -52,9 +60,11 @@ class MainActivity : AppCompatActivity(), SecondFragment.GetUserDetail {
         super.onRestoreInstanceState(savedInstanceState)
         firstname = savedInstanceState.getString(firstnamekey).toString()
         lastname = savedInstanceState.getString(lastnamekey).toString()
+        gender = savedInstanceState.getString(genderkey).toString()
+        address = savedInstanceState.getString(addresskey).toString()
         Log.d(TAG, "==>onRestoreInstanceState()");
-        Log.d(TAG, "==>savedInstanceState:$firstname $lastname");
-        firstFragment.showDetails(firstname,lastname)
+        Log.d(TAG, "==>savedInstanceState:$firstname $lastname $gender $address");
+        firstFragment.showDetails(firstname,lastname,gender,address)
     }
 
     override fun onStart() {
